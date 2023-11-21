@@ -99,7 +99,7 @@ const links = [
     to: "/laboratorio",
   },
   {
-    title: "Eventos",
+    title: "Noticias",
     to: "/evento",
   },
   {
