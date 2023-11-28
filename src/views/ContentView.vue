@@ -124,179 +124,19 @@
         </v-card>
       </div>
     </div>
-    <div class="cards" v-if="route.params.session === 'pesquisador'">
-      <div>
-        <v-card
-          width="344"
-          title="Marcia Motta"
-          subtitle="Pesquisador Fundador"
-          style="border-left: 6px solid #e53737"
-        >
-          <template v-slot:prepend>
-            <v-avatar size="42">
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/john.png"
-                alt="Allan Dutra"
-              ></v-img>
-            </v-avatar>
-          </template>
-          <v-card-text style="height: 35px">
-            Terra, Riqueza e Patrimônio.
-          </v-card-text>
-          <v-card-actions>
-            <v-btn prepend-icon="mail" size="small"> Email </v-btn>
-            <v-btn prepend-icon="link" size="small"> LinkedIn </v-btn>
-            <v-btn prepend-icon="link" size="small"> Lattes </v-btn>
-          </v-card-actions>
-        </v-card>
-      </div>
-      <div>
-        <v-card
-          width="344"
-          title="Allan Dutra"
-          subtitle="Pesquisador Associado"
-          style="border-left: 6px solid #25b60d"
-        >
-          <template v-slot:prepend>
-            <v-avatar size="42">
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/john.png"
-                alt="Allan Dutra"
-              ></v-img>
-            </v-avatar>
-          </template>
-          <v-card-text style="height: 35px">
-            Cultura, Artes e Direitos: Entre a proteção e o acesso.
-          </v-card-text>
-          <v-card-actions>
-            <v-btn prepend-icon="mail" size="small"> Email </v-btn>
-            <v-btn prepend-icon="link" size="small"> LinkedIn </v-btn>
-            <v-btn prepend-icon="link" size="small"> Lattes </v-btn>
-          </v-card-actions>
-        </v-card>
-      </div>
-      <div>
-        <v-card
-          width="344"
-          title="Ana Célia de Castro"
-          subtitle="Pesquisador Consultor"
-          style="border-left: 6px solid #3792e5"
-        >
-          <template v-slot:prepend>
-            <v-avatar size="42">
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/john.png"
-                alt="Allan Dutra"
-              ></v-img>
-            </v-avatar>
-          </template>
-          <v-card-text style="height: 35px">
-            Desenvolvimento, direitos e Políticas públicas.
-          </v-card-text>
-          <v-card-actions>
-            <v-btn prepend-icon="mail" size="small"> Email </v-btn>
-            <v-btn prepend-icon="link" size="small"> LinkedIn </v-btn>
-            <v-btn prepend-icon="link" size="small"> Lattes </v-btn>
-          </v-card-actions>
-        </v-card>
-      </div>
-    </div>
   </div>
   <div v-if="route.params.session === 'sobre'">
-    <v-row>
-      <v-col>
-        <v-card style="border-top: 6px solid #3792e5">
-          <v-card-title style="white-space: unset; line-height: 26px">
-            DESENVOLVIMENTO E POLÍTICAS PÚBLICAS
-          </v-card-title>
-          <v-card-text>
-            <div style="font-weight: bold">POLÍTICAS PÚBLICAS E INOVAÇÃO</div>
-            <p>
-              Esta linha concentra-se nos estudos que partem de uma reflexão
-              sobre o papel do Estado nos processos de inovação, privilegiando a
-              análise das políticas públicas que visaram e visam proteger os
-              interesses coletivos frente aos individuais ou de grupos
-              hegemônicos.
-            </p>
-            <br />
-            <div style="font-weight: bold">
-              PROPRIEDADE INTELECTUAL E INTERESSE COLETIVO
-            </div>
-            <p>
-              Na interface entre a História e o Direito, esta linha destaca os
-              embates e as relações entre as dimensões dos direitos individuais
-              e coletivos. Tem foco especialmente na construção no campo
-              jurídico do processo de legitimação e deslegitimação das
-              propriedades e dos bens comuns.
-            </p>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col>
-        <v-card style="border-top: 6px solid #25b60d">
-          <v-card-title style="white-space: unset; line-height: 26px">
-            CULTURA, ARTES E DIREITOS: ENTRE A PROTEÇÃO E O ACESSO
-          </v-card-title>
-          <v-card-text>
-            <div style="font-weight: bold">
-              POLÍTICAS CULTURAIS DE ACESSO À CULTURA
-            </div>
-            <p>
-              Esta linha analisa a produção do conhecimento, a democratização e
-              acesso à informação. Originária do grupo de pesquisa Núcleo de
-              Estudos e Pesquisa em Direitos Autorais e Culturais (NEDAC) da
-              Universidade Federal do Rio de Janeiro (UFRJ), apoia-se no diálogo
-              entre o Direito, a Produção Cultural e a Economia Criativa.
-            </p>
-            <br />
-            <div style="font-weight: bold">
-              ARTES, DIREITOS E PRODUÇÃO CULTURAL
-            </div>
-            <p>
-              Esta linha recupera as múltiplas facetas do direito autoral e das
-              escalas de direitos sobre um mesmo produto cultural. Na interface
-              entre Arte, Direito e História, desconstrói o processo de
-              construção da produção da arte.
-            </p>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col>
-        <v-card style="border-top: 6px solid #e53737">
-          <v-card-title style="white-space: unset; line-height: 26px">
-            TERRA, RIQUEZA E PATRIMÔNIO
-          </v-card-title>
-          <v-card-text>
-            <div style="font-weight: bold">
-              RIQUEZA E TRANSMISSÃO DE PATRIMÔNIO
-            </div>
-            <p>
-              Na interface entre História e Economia, esta linha de pesquisa
-              privilegia os estudos que analisam a transmissão de patrimônio,
-              enfatizando o processo de construção da fortuna e seu avesso, a
-              formalização das propriedades e as disputas e conflitos que
-              envolvem os bens patrimoniais.
-            </p>
-            <br />
-            <div style="font-weight: bold">
-              HISTÓRIA SOCIAL DAS PROPRIEDADES
-            </div>
-            <p>
-              Esta linha tem foco na legislação agrária em sua relação com os
-              conflitos e movimentos sociais no país. Dada a importância da
-              terra, tanto como um bem limitado quanto como o eixo inaugural da
-              discussão histórica sobre o conceito de propriedade, a linha
-              concentra-se na dimensão histórica — ainda que descontínua — dos
-              embates entre interesses individuais e coletivos.
-            </p>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+    <aboutcards></aboutcards>
+  </div>
+  <div class="content" v-if="route.params.session === 'pesquisador'">
+    <pesquisadorCards></pesquisadorCards>
   </div>
 </template>
 
 <script setup lang="ts">
+import pesquisadorCards from "../components/pesquisadorCards.vue";
+import aboutcards from "../components/aboutCards.vue";
+
 import { computed, ref } from "vue";
 import { useContentStore } from "../stores/contents";
 import { storeToRefs } from "pinia";

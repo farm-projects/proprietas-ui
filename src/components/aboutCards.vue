@@ -1,0 +1,95 @@
+<template>
+  <v-row>
+    <v-col cols="12" lg="4">
+      <v-card style="border-top: 6px solid #3792e5" class="area-tematica">
+        <v-card-title>
+          {{
+            (temas?.find((t: any) => t.code === "POLÍTICAS PÚBLICAS") as any)
+              .label[language]
+          }}
+        </v-card-title>
+        <v-card-text>
+          <div
+            class="sub-area-tematica"
+            v-for="card in cardsAreaTematica
+              ?.filter((c: any) => c.tema === 'POLÍTICAS PÚBLICAS')
+              .sort((a: any, b: any) => a.order - b.order)"
+          >
+            <div class="subtitle">{{ card.title[language] }}</div>
+            <div v-html="card.description[language]"></div>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col cols="12" lg="4">
+      <v-card style="border-top: 6px solid #25b60d" class="area-tematica">
+        <v-card-title>
+          {{
+            (temas?.find((t: any) => t.code === "CULTURA") as any).label[
+              language
+            ]
+          }}
+        </v-card-title>
+        <v-card-text>
+          <div
+            class="sub-area-tematica"
+            v-for="card in cardsAreaTematica
+              ?.filter((c: any) => c.tema === 'CULTURA')
+              .sort((a: any, b: any) => a.order - b.order)"
+          >
+            <div class="subtitle">{{ card.title[language] }}</div>
+            <div v-html="card.description[language]"></div>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col cols="12" lg="4">
+      <v-card style="border-top: 6px solid #e53737" class="area-tematica">
+        <v-card-title>
+          {{
+            (temas?.find((t: any) => t.code === "PATRIMÔNIO") as any).label[
+              language
+            ]
+          }}
+        </v-card-title>
+        <v-card-text>
+          <div
+            class="sub-area-tematica"
+            v-for="card in cardsAreaTematica
+              ?.filter((c: any) => c.tema === 'PATRIMÔNIO')
+              .sort((a: any, b: any) => a.order - b.order)"
+          >
+            <div class="subtitle">{{ card.title[language] }}</div>
+            <div v-html="card.description[language]"></div>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</template>
+
+<script setup lang="ts">
+import { useContentStore } from "../stores/contents";
+import { storeToRefs } from "pinia";
+const store = useContentStore();
+const { temas, language, cardsAreaTematica } = storeToRefs(store);
+</script>
+
+<style lang="scss">
+.area-tematica {
+  .v-card-title {
+    font-size: 20px !important;
+    white-space: unset;
+    line-height: 26px;
+    font-weight: bold;
+  }
+  .v-card-text {
+    font-size: 16px !important;
+    .subtitle {
+      margin: 10px 0;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+}
+</style>
