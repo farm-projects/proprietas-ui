@@ -17,6 +17,25 @@ export const useContentStore = defineStore("contents", () => {
   const items = ref([] as any);
   const cardsAreaTematica = ref([] as any);
   const cardsPesquisadores = ref([] as any);
+  const cardsLaboratorios = ref([] as any);
+  const cardsNoticias = ref([] as any);
+  const translations = ref({
+    coordination: {
+      pt: "Cordenação",
+      en: "Coordination",
+      fr: "Coordination",
+    },
+    more: {
+      pt: "Veja mais",
+      en: "See more",
+      fr: "Voir plus",
+    },
+    close: {
+      pt: "Fechar",
+      en: "Close",
+      fr: "Fermer",
+    },
+  } as any);
   const tipoPesquisador = ref([
     {
       code: "Pesquisador Fundador",
@@ -122,6 +141,31 @@ export const useContentStore = defineStore("contents", () => {
         card.image = card.image?.iv;
         cardsPesquisadores.value.push(card);
       }
+      // load cardsLaboratorios
+      response = await client.contents.getContents("card-laboratorio");
+      cardsLaboratorios.value = [];
+      for (const item of response.items) {
+        const card = JSON.parse(JSON.stringify(item.data));
+        card.title = card.title?.iv;
+        card.responsible = card.responsible?.iv;
+        card.order = card.order?.iv;
+        card.address = card.address?.iv;
+        card.email = card.email?.iv;
+        card.phone = card.phone?.iv;
+        card.site = card.site?.iv;
+        cardsLaboratorios.value.push(card);
+      }
+      // load cardsNoticias
+      response = await client.contents.getContents("card-noticia");
+      cardsNoticias.value = [];
+      for (const item of response.items) {
+        const card = JSON.parse(JSON.stringify(item.data));
+        card.refDate = card.refDate?.iv;
+        card.tipo = card.tipo?.iv;
+        card.link = card.link?.iv;
+        card.image = card.image?.iv;
+        cardsNoticias.value.push(card);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -132,8 +176,11 @@ export const useContentStore = defineStore("contents", () => {
     items,
     cardsAreaTematica,
     cardsPesquisadores,
+    cardsLaboratorios,
+    cardsNoticias,
     tipoPesquisador,
     language,
+    translations,
     loadContents,
   };
 });
