@@ -27,7 +27,6 @@ const cardsNoticiasSorted = computed(() => {
   if (!cardsNoticias.value) {
     return [];
   }
-  console.log("cardsNoticiasSorted: ", cardsNoticias.value.length);
   return cardsNoticias.value.sort(
     (a: any, b: any) =>
       new Date(b.refDate).getTime() - new Date(a.refDate).getTime()
