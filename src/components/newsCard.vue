@@ -1,8 +1,8 @@
 <template>
   <v-card class="card-noticia" :width="width">
     <v-img
-      v-if="data.image"
-      :src="`https://cloud.squidex.io/api/assets/proprietas/${data.image}`"
+      v-if="data.image && data.image.length > 0"
+      :src="`https://cloud.squidex.io/api/assets/proprietas/${data.image[0]}`"
       height="200px"
       cover
     ></v-img>
