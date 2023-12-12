@@ -20,8 +20,10 @@ import { useDisplay } from "vuetify";
 import { computed } from "vue";
 
 const store = useContentStore();
-const { language, translations, cardsNoticias } = storeToRefs(store);
+const { cardsNoticias } = storeToRefs(store);
 const { mobile } = useDisplay();
 
 const cardWidth = computed(() => (mobile.value ? "100%" : "800px"));
+
+console.log(cardsNoticias);
 </script>
