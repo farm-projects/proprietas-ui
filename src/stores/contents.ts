@@ -4,7 +4,7 @@ import { SquidexClient } from "@squidex/squidex";
 
 const client = new SquidexClient({
   appName: "proprietas",
-  clientId: "proprietas:default",
+  clientId: import.meta.env.VITE_CLIENT_ID || "invalid",
   clientSecret: import.meta.env.VITE_CLIENT_SECRET || "invalid",
   environment: "https://cloud.squidex.io/",
 });
