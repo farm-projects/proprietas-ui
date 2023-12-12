@@ -79,6 +79,8 @@ const refDate = computed(() => {
   const dt = new Date(props.data.refDate);
   return dt.toLocaleDateString(language.value);
 });
+
+console.log(props.data);
 </script>
 
 <style lang="scss">

@@ -24,6 +24,4 @@ const { cardsNoticias } = storeToRefs(store);
 const { mobile } = useDisplay();
 
 const cardWidth = computed(() => (mobile.value ? "100%" : "800px"));
-
-console.log(cardsNoticias);
 </script>
