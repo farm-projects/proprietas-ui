@@ -5,11 +5,8 @@ import { SquidexClient } from "@squidex/squidex";
 const client = new SquidexClient({
   appName: "proprietas",
   clientId: "proprietas:default",
-  clientSecret: "2vodu8s43nxgcnp4rfm4piaulkvvsfoxsp164x19dlkx",
+  clientSecret: import.meta.env.VITE_CLIENT_SECRET || "invalid",
   environment: "https://cloud.squidex.io/",
-  // tokenStore: new SquidexStorageTokenStore(sessionStorage, 'CustomKey')
-  // tokenStore: new SquidexInMemoryTokenStore(),
-  // tokenStore: new SquidexStorageTokenStore() // Keep the tokens in the local store.
 });
 
 export const useContentStore = defineStore("contents", () => {
