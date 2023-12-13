@@ -88,7 +88,7 @@ const { temas, language, cardsAreaTematica } = storeToRefs(store);
     white-space: unset;
     font-weight: bold;
     line-height: 24px !important;
-    height: 75px;
+    min-height: 75px;
     display: flex;
     align-items: center;
   }
