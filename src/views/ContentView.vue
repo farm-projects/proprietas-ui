@@ -31,7 +31,7 @@ import laboratorioCards from "../components/laboratorioCards.vue";
 import newsCards from "../components/newsCards.vue";
 import footerLogos from "../components/footer.vue";
 
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import { useContentStore } from "../stores/contents";
 import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";

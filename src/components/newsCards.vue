@@ -16,9 +16,15 @@ import { storeToRefs } from "pinia";
 import { useDisplay } from "vuetify";
 import { computed } from "vue";
 
+const props = defineProps({
+  mode: String,
+});
+
 const { mobile } = useDisplay();
 
-const cardWidth = computed(() => (mobile.value ? "100%" : "800px"));
+const cardWidth = computed(() =>
+  mobile.value || props.mode === "home" ? "100%" : "800px"
+);
 
 const store = useContentStore();
 const { cardsNoticias } = storeToRefs(store);

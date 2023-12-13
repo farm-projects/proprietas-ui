@@ -1,8 +1,8 @@
 <template>
   <v-row>
-    <v-col cols="12" lg="4">
+    <v-col :cols="width > 1400 ? 4 : 12">
       <v-card style="border-top: 6px solid #3792e5" class="area-tematica">
-        <v-card-title>
+        <v-card-title style="line-height: 24px">
           {{
             (temas?.find((t: any) => t.code === "POLÍTICAS PÚBLICAS") as any)
               .label[language]
@@ -21,7 +21,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="12" lg="4">
+    <v-col :cols="width > 1400 ? 4 : 12">
       <v-card style="border-top: 6px solid #25b60d" class="area-tematica">
         <v-card-title>
           <div
@@ -46,9 +46,9 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="12" lg="4">
+    <v-col :cols="width > 1400 ? 4 : 12">
       <v-card style="border-top: 6px solid #e53737" class="area-tematica">
-        <v-card-title>
+        <v-card-title style="line-height: 24px">
           {{
             (temas?.find((t: any) => t.code === "PATRIMÔNIO") as any).label[
               language
@@ -74,6 +74,10 @@
 <script setup lang="ts">
 import { useContentStore } from "../stores/contents";
 import { storeToRefs } from "pinia";
+import { useDisplay } from "vuetify";
+
+const { width } = useDisplay();
+
 const store = useContentStore();
 const { temas, language, cardsAreaTematica } = storeToRefs(store);
 </script>

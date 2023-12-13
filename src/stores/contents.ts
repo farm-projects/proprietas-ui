@@ -17,18 +17,51 @@ export const useContentStore = defineStore("contents", () => {
   const cardsLaboratorios = ref([] as any);
   const cardsNoticias = ref([] as any);
   const translations = ref({
+    news: {
+      pt: "Notícias",
+      en: "News",
+      es: "Noticias",
+      fr: "Nouvelles",
+    },
+    researchers: {
+      pt: "Pesquisadores",
+      en: "Researchers",
+      es: "Investigadores",
+      fr: "Des chercheurs",
+    },
+    labs: {
+      pt: "Laboratories",
+      en: "Laboratories",
+      es: "Laboratories",
+      fr: "Laboratoires",
+    },
+    contact: {
+      pt: "Contato",
+      en: "Contact",
+      es: "Contacto",
+      fr: "Contact",
+    },
+    last_news: {
+      pt: "Últimas notícias",
+      en: "Last News",
+      es: "Últimas noticias",
+      fr: "Dernières nouvelles",
+    },
     coordination: {
       pt: "Cordenação",
+      es: "Cordenacion",
       en: "Coordination",
       fr: "Coordination",
     },
     more: {
       pt: "Veja mais",
+      es: "Ver más",
       en: "See more",
       fr: "Voir plus",
     },
     close: {
       pt: "Fechar",
+      es: "Cerrar",
       en: "Close",
       fr: "Fermer",
     },
@@ -38,11 +71,13 @@ export const useContentStore = defineStore("contents", () => {
       code: "Pesquisador Fundador",
       plural: {
         pt: "Pesquisadores Fundadores",
+        es: "Pesquisadores Fundadores",
         en: "Pesquisadores Fundadores",
         fr: "Pesquisadores Fundadores",
       },
       sigle: {
         pt: "Pesquisador Fundador",
+        es: "Pesquisador Fundador",
         en: "Pesquisador Fundador",
         fr: "Pesquisador Fundador",
       },
@@ -51,11 +86,13 @@ export const useContentStore = defineStore("contents", () => {
       code: "Pesquisador Associado",
       plural: {
         pt: "Pesquisadores Associados",
+        es: "Pesquisadores Associados",
         en: "Pesquisadores Associados",
         fr: "Pesquisadores Associados",
       },
       sigle: {
         pt: "Pesquisador Associado",
+        es: "Pesquisador Associado",
         en: "Pesquisador Associado",
         fr: "Pesquisador Associado",
       },
@@ -64,11 +101,13 @@ export const useContentStore = defineStore("contents", () => {
       code: "Pesquisador Consultor",
       plural: {
         pt: "Pesquisadores Consultores",
+        es: "Pesquisadores Consultores",
         en: "Pesquisadores Consultores",
         fr: "Pesquisadores Consultores",
       },
       sigle: {
         pt: "Pesquisador Consultor",
+        es: "Pesquisador Consultor",
         en: "Pesquisador Consultor",
         fr: "Pesquisador Consultor",
       },
@@ -77,11 +116,13 @@ export const useContentStore = defineStore("contents", () => {
       code: "Pesquisadora Fundadora",
       plural: {
         pt: "Pesquisadoras Fundadoras",
+        es: "Pesquisadoras Fundadoras",
         en: "Pesquisadoras Fundadoras",
         fr: "Pesquisadoras Fundadoras",
       },
       sigle: {
         pt: "Pesquisadora Fundadora",
+        es: "Pesquisadora Fundadora",
         en: "Pesquisadora Fundadora",
         fr: "Pesquisadora Fundadora",
       },
@@ -90,11 +131,13 @@ export const useContentStore = defineStore("contents", () => {
       code: "Pesquisadora Associada",
       plural: {
         pt: "Pesquisadores Associadas",
+        es: "Pesquisadores Associadas",
         en: "Pesquisadores Associadas",
         fr: "Pesquisadores Associadas",
       },
       sigle: {
         pt: "Pesquisadora Associada",
+        es: "Pesquisadora Associada",
         en: "Pesquisadora Associada",
         fr: "Pesquisadora Associada",
       },
@@ -103,11 +146,13 @@ export const useContentStore = defineStore("contents", () => {
       code: "Pesquisadora Consultora",
       plural: {
         pt: "Pesquisadoras Consultoras",
+        es: "Pesquisadoras Consultoras",
         en: "Pesquisadoras Consultoras",
         fr: "Pesquisadoras Consultoras",
       },
       sigle: {
         pt: "Pesquisadora Consultora",
+        es: "Pesquisadora Consultora",
         en: "Pesquisadora Consultora",
         fr: "Pesquisadora Consultora",
       },
@@ -118,8 +163,9 @@ export const useContentStore = defineStore("contents", () => {
       code: "POLÍTICAS PÚBLICAS",
       label: {
         pt: "DESENVOLVIMENTO E POLÍTICAS PÚBLICAS",
+        es: "DESARROLLO Y POLÍTICAS PÚBLICAS",
         en: "DESENVOLVIMENTO E POLÍTICAS PÚBLICAS",
-        fr: "DESENVOLVIMENTO E POLÍTICAS PÚBLICAS",
+        fr: "DÉVELOPPEMENT ET POLITIQUES PUBLIQUES",
       },
       color: "#3792e5",
     },
@@ -127,8 +173,9 @@ export const useContentStore = defineStore("contents", () => {
       code: "CULTURA",
       label: {
         pt: "CULTURA, ARTES E DIREITOS:<br>ENTRE A PROTEÇÃO E O ACESSO",
-        en: "CULTURA, ARTES E DIREITOS:<br>ENTRE A PROTEÇÃO E O ACESSO",
-        fr: "CULTURA, ARTES E DIREITOS:<br>ENTRE A PROTEÇÃO E O ACESSO",
+        es: "CULTURA, ARTE Y DERECHOS:<br>ENTRE PROTECCIÓN Y ACCESO",
+        en: "CULTURE, ARTS AND RIGHTS:<br>BETWEEN PROTECTION AND ACCESS",
+        fr: "CULTURE, ARTS ET DROITS :<br>ENTRE PROTECTION ET ACCÈS",
       },
       color: "#25b60d",
     },
@@ -136,12 +183,16 @@ export const useContentStore = defineStore("contents", () => {
       code: "PATRIMÔNIO",
       label: {
         pt: "TERRA, RIQUEZA E PATRIMÔNIO",
-        en: "TERRA, RIQUEZA E PATRIMÔNIO",
-        fr: "TERRA, RIQUEZA E PATRIMÔNIO",
+        es: "TIERRA, RIQUEZA Y PATRIMONIO",
+        en: "LAND, WEALTH AND HERITAGE",
+        fr: "TERRITOIRE, RICHESSE ET PATRIMOINE",
       },
       color: "#e53737",
     },
   ]);
+  function setLanguage(lang: string) {
+    language.value = lang;
+  }
   async function loadContents() {
     try {
       // load contents
@@ -220,6 +271,7 @@ export const useContentStore = defineStore("contents", () => {
     tipoPesquisador,
     language,
     translations,
+    setLanguage,
     loadContents,
   };
 });

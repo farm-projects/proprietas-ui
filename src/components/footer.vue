@@ -67,7 +67,7 @@
 <style lang="scss">
 .footer-logos {
   border-top: 1px solid #ccc;
-  margin: 80px 0 20px 0;
+  margin: 30px 0 20px 0;
   padding-top: 15px;
   .footer-flex {
     display: flex;
