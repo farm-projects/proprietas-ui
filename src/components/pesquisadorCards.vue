@@ -1,6 +1,6 @@
 <template>
   <div class="pesquisadores">
-    <div class="title text-primary">
+    <div class="title text-primary" style="line-height: 30px">
       {{
         tipoPesquisador.find((p: any) => p.code === "Pesquisador Fundador")
           ?.plural[language]
@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="pesquisadores">
-    <div class="title text-primary">
+    <div class="title text-primary" style="line-height: 30px">
       {{
         tipoPesquisador.find((p: any) => p.code === "Pesquisador Associado")
           ?.plural[language]
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="pesquisadores">
-    <div class="title text-primary">
+    <div class="title text-primary" style="line-height: 30px">
       {{
         tipoPesquisador.find((p: any) => p.code === "Pesquisador Consultor")
           ?.plural[language]

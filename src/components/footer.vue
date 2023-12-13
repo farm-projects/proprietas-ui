@@ -1,6 +1,35 @@
 <template>
   <div class="footer-logos">
     <div>
+      <div class="footer-logo-title text-primary">REDES SOCIAIS:</div>
+      <div class="footer-flex" style="gap: 30px">
+        <a
+          href="https://youtube.com/@INCTPROPRIETAS?si=RGkKq8YjBx6AfoDQ"
+          target="_blank"
+        >
+          <img src="../assets/img/logo-youtube.png" style="height: 38px" />
+        </a>
+        <a
+          href="https://www.facebook.com/institutoproprietas?mibextid=qWsEUC"
+          target="_blank"
+        >
+          <img src="../assets/img/logo-facebook.jpg" style="height: 38px" />
+        </a>
+        <a
+          href="https://instagram.com/proprietas_?igshid=MmVlMjlkMTBhMg=="
+          target="_blank"
+        >
+          <img src="../assets/img/logo-instagram.jpg" style="height: 38px" />
+        </a>
+        <a href="https://x.com/proprietas1?s=11" target="_blank">
+          <img
+            src="../assets/img/logo-x.png"
+            style="height: 38px; border-radius: 6px"
+          />
+        </a>
+      </div>
+    </div>
+    <div style="margin-top: 50px">
       <div class="footer-logo-title text-primary">ORGÃOS DE FOMENTO:</div>
       <div class="footer-flex" style="gap: 50px">
         <img src="../assets/img/footer-capes.png" style="height: 55px" />
