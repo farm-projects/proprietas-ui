@@ -22,7 +22,12 @@
     <v-card-text style="height: 80px">
       <div v-html="tema.label[language]"></div>
       <div style="display: flex; gap: 5px; margin-top: 10px">
-        <v-chip v-for="tag in tags" :color="tema.color" rounded="6">
+        <v-chip
+          v-for="tag in tags"
+          :color="tema.color"
+          rounded="6"
+          :size="mobile ? 'small' : 'default'"
+        >
           {{ tag }}
         </v-chip>
       </div>
@@ -91,6 +96,7 @@ const props = defineProps({
   data: Object as any,
   tipo: String,
   width: String,
+  mobile: Boolean,
 });
 
 import { computed } from "vue";

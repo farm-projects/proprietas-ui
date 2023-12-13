@@ -74,6 +74,7 @@
         :data="card"
         :tipo="card.tipo"
         :width="cardWidth"
+        :mobile="mobile"
       ></pesquisador>
     </div>
   </div>
