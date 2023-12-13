@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col :cols="width > 1400 ? 4 : 12">
+    <v-col :cols="width > 1800 ? 4 : 12">
       <v-card style="border-top: 6px solid #3792e5" class="area-tematica">
         <v-card-title>
           {{
@@ -21,7 +21,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col :cols="width > 1400 ? 4 : 12">
+    <v-col :cols="width > 1800 ? 4 : 12">
       <v-card style="border-top: 6px solid #25b60d" class="area-tematica">
         <v-card-title>
           <div
@@ -45,7 +45,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col :cols="width > 1400 ? 4 : 12">
+    <v-col :cols="width > 1800 ? 4 : 12">
       <v-card style="border-top: 6px solid #e53737" class="area-tematica">
         <v-card-title>
           {{
@@ -88,7 +88,7 @@ const { temas, language, cardsAreaTematica } = storeToRefs(store);
     white-space: unset;
     font-weight: bold;
     line-height: 24px !important;
-    height: 70px;
+    height: 75px;
     display: flex;
     align-items: center;
   }
