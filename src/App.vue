@@ -3,24 +3,28 @@
     <v-system-bar color="bluebackground">
       <v-spacer></v-spacer>
       <v-btn
+        style="font-weight: 600"
         variant="text"
         :color="language === 'pt' ? 'accent' : 'white'"
         @click="store.setLanguage('pt')"
         >PT</v-btn
       >
       <v-btn
+        style="font-weight: 600"
         variant="text"
         :color="language === 'es' ? 'accent' : 'white'"
         @click="store.setLanguage('es')"
         >ES</v-btn
       >
       <v-btn
+        style="font-weight: 600"
         variant="text"
         :color="language === 'en' ? 'accent' : 'white'"
         @click="store.setLanguage('en')"
         >EN</v-btn
       >
       <v-btn
+        style="font-weight: 600"
         variant="text"
         :color="language === 'fr' ? 'accent' : 'white'"
         @click="store.setLanguage('fr')"
@@ -126,7 +130,7 @@ const links = [
   },
   {
     title: {
-      pt: "Laboratories",
+      pt: "Laboratórios",
       en: "Laboratories",
       es: "Laboratories",
       fr: "Laboratoires",

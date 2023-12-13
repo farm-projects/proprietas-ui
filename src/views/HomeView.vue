@@ -59,7 +59,7 @@ const store = useContentStore();
 
 const { language, items, translations } = storeToRefs(store);
 
-const newsHeight = computed(() => (mobile ? "" : el.value?.offsetHeight));
+const newsHeight = computed(() => (mobile.value ? "" : el.value?.offsetHeight));
 
 const contents = computed(() => {
   return items.value

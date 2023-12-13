@@ -29,7 +29,7 @@
         </a>
       </div>
     </div>
-    <div style="margin-top: 50px">
+    <div style="margin-top: 30px">
       <div class="footer-logo-title text-primary">ORGÃOS DE FOMENTO:</div>
       <div class="footer-flex" style="gap: 50px">
         <img src="../assets/img/footer-capes.png" style="height: 55px" />
