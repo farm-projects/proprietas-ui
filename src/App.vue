@@ -148,8 +148,8 @@ const links = [
   },
   {
     title: {
-      pt: "Cordenação",
-      es: "Cordenacion",
+      pt: "Coordenação",
+      es: "Coordinación",
       en: "Coordination",
       fr: "Coordination",
     },
