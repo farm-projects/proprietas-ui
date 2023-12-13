@@ -26,7 +26,7 @@
           v-for="tag in tags"
           :color="tema.color"
           rounded="6"
-          :size="mobile ? 'small' : 'default'"
+          :size="props.tagSize"
         >
           {{ tag }}
         </v-chip>
@@ -96,7 +96,7 @@ const props = defineProps({
   data: Object as any,
   tipo: String,
   width: String,
-  mobile: Boolean,
+  tagSize: String,
 });
 
 import { computed } from "vue";

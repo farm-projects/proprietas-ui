@@ -22,6 +22,7 @@
         :data="card"
         :tipo="card.tipo"
         :width="cardWidth"
+        :tag-size="cardTagSize"
       ></pesquisador>
     </div>
   </div>
@@ -48,6 +49,7 @@
         :data="card"
         :tipo="card.tipo"
         :width="cardWidth"
+        :tag-size="cardTagSize"
       ></pesquisador>
     </div>
   </div>
@@ -74,7 +76,7 @@
         :data="card"
         :tipo="card.tipo"
         :width="cardWidth"
-        :mobile="mobile"
+        :tag-size="cardTagSize"
       ></pesquisador>
     </div>
   </div>
@@ -91,6 +93,8 @@ import { computed } from "vue";
 const { mobile } = useDisplay();
 
 const cardWidth = computed(() => (mobile.value ? "100%" : "420px"));
+
+const cardTagSize = computed(() => (mobile.value ? "small" : "default"));
 
 const store = useContentStore();
 const { language, cardsPesquisadores, tipoPesquisador } = storeToRefs(store);
