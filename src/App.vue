@@ -2,16 +2,28 @@
   <v-app>
     <v-system-bar color="bluebackground">
       <v-spacer></v-spacer>
-      <v-btn variant="text" color="white" @click="store.setLanguage('pt')"
+      <v-btn
+        variant="text"
+        :color="language === 'pt' ? 'accent' : 'white'"
+        @click="store.setLanguage('pt')"
         >PT</v-btn
       >
-      <v-btn variant="text" color="white" @click="store.setLanguage('es')"
+      <v-btn
+        variant="text"
+        :color="language === 'es' ? 'accent' : 'white'"
+        @click="store.setLanguage('es')"
         >ES</v-btn
       >
-      <v-btn variant="text" color="white" @click="store.setLanguage('en')"
+      <v-btn
+        variant="text"
+        :color="language === 'en' ? 'accent' : 'white'"
+        @click="store.setLanguage('en')"
         >EN</v-btn
       >
-      <v-btn variant="text" color="white" @click="store.setLanguage('fr')"
+      <v-btn
+        variant="text"
+        :color="language === 'fr' ? 'accent' : 'white'"
+        @click="store.setLanguage('fr')"
         >FR</v-btn
       >
     </v-system-bar>

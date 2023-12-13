@@ -1,6 +1,7 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
 import { SquidexClient } from "@squidex/squidex";
+import { useLocalStorage } from "@vueuse/core";
 
 const client = new SquidexClient({
   appName: "proprietas",
@@ -10,7 +11,7 @@ const client = new SquidexClient({
 });
 
 export const useContentStore = defineStore("contents", () => {
-  const language = ref("pt");
+  const language = useLocalStorage("lang", "pt");
   const items = ref([] as any);
   const cardsAreaTematica = ref([] as any);
   const cardsPesquisadores = ref([] as any);
