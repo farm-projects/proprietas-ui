@@ -4,7 +4,7 @@
     :style="`border-left: 6px solid ${tema.color}; width: ${width};`"
   >
     <template v-slot:title>
-      {{ data.nome }}
+      <div v-html="data.nome"></div>
     </template>
     <template v-slot:subtitle>
       <div class="pesquisador-tipo">{{ tipo.sigle[language] }}</div>
@@ -19,8 +19,13 @@
         <v-icon v-else icon="md:person" :size="80" color="#ccc"></v-icon>
       </v-avatar>
     </template>
-    <v-card-text style="height: 50px">
-      {{ tema.label[language] }}
+    <v-card-text style="height: 80px">
+      <div v-html="tema.label[language]"></div>
+      <div style="display: flex; gap: 5px; margin-top: 10px">
+        <v-chip v-for="tag in tags" :color="tema.color" rounded="6">
+          {{ tag }}
+        </v-chip>
+      </div>
     </v-card-text>
     <v-card-actions>
       <v-btn
@@ -33,15 +38,6 @@
         E-mail
       </v-btn>
       <v-btn
-        v-if="data.linkedin"
-        :href="data.linkedin"
-        prepend-icon="link"
-        size="small"
-        target="_blank"
-      >
-        LinkedIn
-      </v-btn>
-      <v-btn
         v-if="data.lattes"
         :href="data.lattes"
         prepend-icon="link"
@@ -49,6 +45,42 @@
         target="_blank"
       >
         Lattes
+      </v-btn>
+      <v-btn
+        v-if="data.facebook"
+        :href="data.facebook"
+        prepend-icon="link"
+        size="small"
+        target="_blank"
+      >
+        Fabebook
+      </v-btn>
+      <v-btn
+        v-if="data.instagram"
+        :href="data.instagram"
+        prepend-icon="link"
+        size="small"
+        target="_blank"
+      >
+        Instagram
+      </v-btn>
+      <v-btn
+        v-if="data.twitter"
+        :href="data.twitter"
+        prepend-icon="link"
+        size="small"
+        target="_blank"
+      >
+        Twitter
+      </v-btn>
+      <v-btn
+        v-if="data.linkedin"
+        :href="data.linkedin"
+        prepend-icon="link"
+        size="small"
+        target="_blank"
+      >
+        LinkedIn
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -76,6 +108,12 @@ const tipo = computed(
     tipoPesquisador.value?.find((p: any) => p.code === props.tipo) ||
     ({} as any)
 );
+
+const tags = computed(() => {
+  return props.data.tags && props.data.tags[language.value]
+    ? props.data.tags[language.value].split(";")
+    : [];
+});
 </script>
 
 <style lang="scss">

@@ -1,6 +1,11 @@
 <template>
-  <div class="pesquisadores" v-for="tipo in tipoPesquisador as any">
-    <div class="title text-primary">{{ tipo.plural[language] }}</div>
+  <div class="pesquisadores">
+    <div class="title text-primary">
+      {{
+        tipoPesquisador.find((p: any) => p.code === "Pesquisador Fundador")
+          ?.plural[language]
+      }}
+    </div>
     <div
       :style="`display: grid;
         grid-gap: 15px;
@@ -8,10 +13,66 @@
     >
       <pesquisador
         v-for="card in cardsPesquisadores
-          .filter((c: any) => c.tipo === tipo.code)
+          .filter(
+            (c: any) =>
+              c.tipo === 'Pesquisador Fundador' ||
+              c.tipo === 'Pesquisadora Fundadora'
+          )
           .sort((a: any, b: any) => a.order - b.order)"
         :data="card"
-        :tipo="tipo.code"
+        :tipo="card.tipo"
+        :width="cardWidth"
+      ></pesquisador>
+    </div>
+  </div>
+  <div class="pesquisadores">
+    <div class="title text-primary">
+      {{
+        tipoPesquisador.find((p: any) => p.code === "Pesquisador Associado")
+          ?.plural[language]
+      }}
+    </div>
+    <div
+      :style="`display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, ${cardWidth});`"
+    >
+      <pesquisador
+        v-for="card in cardsPesquisadores
+          .filter(
+            (c: any) =>
+              c.tipo === 'Pesquisador Associado' ||
+              c.tipo === 'Pesquisadora Associada'
+          )
+          .sort((a: any, b: any) => a.order - b.order)"
+        :data="card"
+        :tipo="card.tipo"
+        :width="cardWidth"
+      ></pesquisador>
+    </div>
+  </div>
+  <div class="pesquisadores">
+    <div class="title text-primary">
+      {{
+        tipoPesquisador.find((p: any) => p.code === "Pesquisador Consultor")
+          ?.plural[language]
+      }}
+    </div>
+    <div
+      :style="`display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, ${cardWidth});`"
+    >
+      <pesquisador
+        v-for="card in cardsPesquisadores
+          .filter(
+            (c: any) =>
+              c.tipo === 'Pesquisador Consultor' ||
+              c.tipo === 'Pesquisadora Consultora'
+          )
+          .sort((a: any, b: any) => a.order - b.order)"
+        :data="card"
+        :tipo="card.tipo"
         :width="cardWidth"
       ></pesquisador>
     </div>

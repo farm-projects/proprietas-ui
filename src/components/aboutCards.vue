@@ -24,11 +24,14 @@
     <v-col cols="12" lg="4">
       <v-card style="border-top: 6px solid #25b60d" class="area-tematica">
         <v-card-title>
-          {{
-            (temas?.find((t: any) => t.code === "CULTURA") as any).label[
-              language
-            ]
-          }}
+          <div
+            style="line-height: 24px"
+            v-html="
+              (temas?.find((t: any) => t.code === 'CULTURA') as any).label[
+                language
+              ]
+            "
+          ></div>
         </v-card-title>
         <v-card-text>
           <div

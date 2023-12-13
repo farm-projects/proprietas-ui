@@ -73,7 +73,46 @@ export const useContentStore = defineStore("contents", () => {
         fr: "Pesquisador Consultor",
       },
     },
-  ]);
+    {
+      code: "Pesquisadora Fundadora",
+      plural: {
+        pt: "Pesquisadoras Fundadoras",
+        en: "Pesquisadoras Fundadoras",
+        fr: "Pesquisadoras Fundadoras",
+      },
+      sigle: {
+        pt: "Pesquisadora Fundadora",
+        en: "Pesquisadora Fundadora",
+        fr: "Pesquisadora Fundadora",
+      },
+    },
+    {
+      code: "Pesquisadora Associada",
+      plural: {
+        pt: "Pesquisadores Associadas",
+        en: "Pesquisadores Associadas",
+        fr: "Pesquisadores Associadas",
+      },
+      sigle: {
+        pt: "Pesquisadora Associada",
+        en: "Pesquisadora Associada",
+        fr: "Pesquisadora Associada",
+      },
+    },
+    {
+      code: "Pesquisadora Consultora",
+      plural: {
+        pt: "Pesquisadoras Consultoras",
+        en: "Pesquisadoras Consultoras",
+        fr: "Pesquisadoras Consultoras",
+      },
+      sigle: {
+        pt: "Pesquisadora Consultora",
+        en: "Pesquisadora Consultora",
+        fr: "Pesquisadora Consultora",
+      },
+    },
+  ] as any);
   const temas = ref([
     {
       code: "POLÍTICAS PÚBLICAS",
@@ -87,9 +126,9 @@ export const useContentStore = defineStore("contents", () => {
     {
       code: "CULTURA",
       label: {
-        pt: "CULTURA, ARTES E DIREITOS: ENTRE A PROTEÇÃO E O ACESSO",
-        en: "CULTURA, ARTES E DIREITOS: ENTRE A PROTEÇÃO E O ACESSO",
-        fr: "CULTURA, ARTES E DIREITOS: ENTRE A PROTEÇÃO E O ACESSO",
+        pt: "CULTURA, ARTES E DIREITOS:<br>ENTRE A PROTEÇÃO E O ACESSO",
+        en: "CULTURA, ARTES E DIREITOS:<br>ENTRE A PROTEÇÃO E O ACESSO",
+        fr: "CULTURA, ARTES E DIREITOS:<br>ENTRE A PROTEÇÃO E O ACESSO",
       },
       color: "#25b60d",
     },
@@ -130,6 +169,9 @@ export const useContentStore = defineStore("contents", () => {
         const card = JSON.parse(JSON.stringify(item.data));
         card.nome = card.nome?.iv;
         card.linkedin = card.linkedin?.iv;
+        card.facebook = card.facebook?.iv;
+        card.instagram = card.instagram?.iv;
+        card.twitter = card.twitter?.iv;
         card.email = card.email?.iv;
         card.lattes = card.lattes?.iv;
         card.tipo = card.tipo?.iv;

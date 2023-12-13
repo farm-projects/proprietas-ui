@@ -91,16 +91,16 @@ const links = [
     to: "/pesquisador",
   },
   {
-    title: "Equipe",
-    to: "/equipe",
-  },
-  {
     title: "Laboratórios",
     to: "/laboratorio",
   },
   {
     title: "Noticias",
     to: "/evento",
+  },
+  {
+    title: "Coordenação",
+    to: "/equipe",
   },
   {
     title: "Contato",
