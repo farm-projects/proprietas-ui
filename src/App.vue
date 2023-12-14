@@ -207,4 +207,7 @@ body {
   border-radius: 10px;
   border: 3px solid #ebebeb;
 }
+.v-card-title {
+  hyphens: manual !important;
+}
 </style>
