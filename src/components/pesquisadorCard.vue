@@ -21,7 +21,7 @@
     </template>
     <v-card-text style="height: 80px">
       <div v-html="tema.label[language]"></div>
-      <div style="display: flex; gap: 5px; margin-top: 10px">
+      <div style="display: flex; gap: 3px; margin-top: 10px; margin-left: -5px">
         <v-chip
           v-for="tag in tags"
           :color="tema.color"
@@ -32,7 +32,7 @@
         </v-chip>
       </div>
     </v-card-text>
-    <v-card-actions>
+    <v-card-actions :style="mobile ? 'flex-wrap:wrap' : ''">
       <v-btn
         v-if="data.email"
         prepend-icon="mail"
@@ -97,6 +97,7 @@ const props = defineProps({
   tipo: String,
   width: String,
   tagSize: String,
+  mobile: Boolean,
 });
 
 import { computed } from "vue";
@@ -133,6 +134,9 @@ const tags = computed(() => {
   }
   .v-card-actions {
     margin-top: -15px;
+    .v-card-actions .v-btn ~ .v-btn:not(.v-btn-toggle .v-btn) {
+      margin-inline-start: 0px !important;
+    }
   }
   .pesquisador-tipo {
     margin-top: 2px;

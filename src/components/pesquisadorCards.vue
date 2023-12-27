@@ -22,6 +22,7 @@
         :data="card"
         :tipo="card.tipo"
         :width="cardWidth"
+        :mobile="mobile"
         :tag-size="cardTagSize"
       ></pesquisador>
     </div>
@@ -49,6 +50,7 @@
         :data="card"
         :tipo="card.tipo"
         :width="cardWidth"
+        :mobile="mobile"
         :tag-size="cardTagSize"
       ></pesquisador>
     </div>
@@ -76,6 +78,7 @@
         :data="card"
         :tipo="card.tipo"
         :width="cardWidth"
+        :mobile="mobile"
         :tag-size="cardTagSize"
       ></pesquisador>
     </div>
@@ -92,7 +95,7 @@ import { computed } from "vue";
 
 const { mobile } = useDisplay();
 
-const cardWidth = computed(() => (mobile.value ? "100%" : "420px"));
+const cardWidth = computed(() => (mobile.value ? "100%" : "415px"));
 
 const cardTagSize = computed(() => (mobile.value ? "small" : "default"));
 
