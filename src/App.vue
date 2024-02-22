@@ -40,7 +40,13 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, i) in links" :key="i" link :to="item.to">
+            <v-list-item
+              v-for="(item, i) in links"
+              :key="i"
+              link
+              :to="item.to"
+              :active="route.params.session === item.id"
+            >
               <v-list-item-title>{{ item.title[language] }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -105,8 +111,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import { RouterView } from "vue-router";
+import { computed, onMounted, ref } from "vue";
+import { RouterView, useRoute } from "vue-router";
 import { useContentStore } from "./stores/contents";
 import { useDisplay } from "vuetify";
 import { storeToRefs } from "pinia";
@@ -117,9 +123,11 @@ const store = useContentStore();
 const { language } = storeToRefs(store);
 
 const loading = ref(true);
+const route = useRoute();
 
 const links = [
   {
+    id: "pesquisador",
     title: {
       pt: "Pesquisadores",
       en: "Researchers",
@@ -129,6 +137,7 @@ const links = [
     to: "/pesquisador",
   },
   {
+    id: "laboratorio",
     title: {
       pt: "Laboratórios",
       en: "Laboratories",
@@ -138,6 +147,7 @@ const links = [
     to: "/laboratorio",
   },
   {
+    id: "evento",
     title: {
       pt: "Notícias",
       en: "News",
@@ -147,6 +157,7 @@ const links = [
     to: "/evento",
   },
   {
+    id: "equipe",
     title: {
       pt: "Coordenação",
       es: "Coordinación",
@@ -156,6 +167,7 @@ const links = [
     to: "/equipe",
   },
   {
+    id: "contato",
     title: {
       pt: "Contato",
       en: "Contact",

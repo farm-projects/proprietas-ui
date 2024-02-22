@@ -12,7 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@squidex/squidex": "^1.2.1",
+    "@squidex/squidex": "^1.0.0",
     "@vueuse/core": "^10.7.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.4",

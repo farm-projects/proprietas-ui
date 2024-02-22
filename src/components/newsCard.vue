@@ -5,10 +5,10 @@
       :src="`https://cloud.squidex.io/api/assets/proprietas/${data.image[0]}`"
       cover
     ></v-img>
-    <v-card-title
-      style="white-space: unset; line-height: 26px"
-      v-html="data.title[language]"
-    >
+    <v-card-title style="white-space: unset; line-height: 26px">
+      <router-link :to="`/evento/${data.id}`">
+        <div v-html="data.title[language]"></div>
+      </router-link>
     </v-card-title>
     <v-card-subtitle
       v-if="data.subtitle[language]"
@@ -37,7 +37,7 @@
         Link
       </v-btn>
       <v-btn
-        v-if="data.description[language]"
+        v-if="data.description[language] && !open"
         :prepend-icon="show ? 'expand_less' : 'expand_more'"
         variant="text"
         @click="show = !show"
@@ -72,9 +72,10 @@ const { language, translations } = storeToRefs(store);
 const props = defineProps({
   data: Object as any,
   width: String,
+  open: Boolean,
 });
 
-const show = ref(false);
+const show = ref(props.open);
 
 const refDate = computed(() => {
   const dt = new Date(props.data.refDate);

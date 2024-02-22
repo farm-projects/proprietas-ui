@@ -251,6 +251,7 @@ export const useContentStore = defineStore("contents", () => {
       cardsNoticias.value = [];
       for (const item of response.items) {
         const card = JSON.parse(JSON.stringify(item.data));
+        card.id = item.id;
         card.refDate = card.refDate?.iv;
         card.tipo = card.tipo?.iv;
         card.link = card.link?.iv;
