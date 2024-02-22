@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import noticia from "../components/newsCard.vue";
 
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useContentStore } from "../stores/contents";
 import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
@@ -28,5 +28,26 @@ const content = computed(() => {
 
 const news = computed(() => {
   return cardsNoticias.value.find((c: any) => c.id === route.params.id);
+});
+
+onMounted(() => {
+  document
+    .querySelector(`meta[property="twitter:title"]`)
+    ?.setAttribute("content", news.value.title[language.value]);
+  document
+    .querySelector(`meta[property="twitter:image"]`)
+    ?.setAttribute(
+      "content",
+      `https://cloud.squidex.io/api/assets/proprietas/${news.value.image[0]}`
+    );
+  document
+    .querySelector(`meta[property="og:title"]`)
+    ?.setAttribute("content", news.value.title[language.value]);
+  document
+    .querySelector(`meta[property="og:image"]`)
+    ?.setAttribute(
+      "content",
+      `https://cloud.squidex.io/api/assets/proprietas/${news.value.image[0]}`
+    );
 });
 </script>
