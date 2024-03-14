@@ -85,7 +85,7 @@
   </div>
   <div class="pesquisadores">
     <div class="title text-primary" style="line-height: 30px">
-      {{ translations.estudante_pos_graduacao[language] }}
+      {{ translations.bolsistas[language] }}
     </div>
     <div
       :style="`display: grid;

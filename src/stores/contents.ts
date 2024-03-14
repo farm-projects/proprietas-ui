@@ -72,6 +72,12 @@ export const useContentStore = defineStore("contents", () => {
       en: "Postgraduate Students",
       fr: "Étudiants de Troisième Cycle",
     },
+    bolsistas: {
+      pt: "Bolsistas",
+      es: "Beca titular",
+      en: "Scholarship Holder",
+      fr: "Boursier",
+    },
   } as any);
   const tipoPesquisador = ref([
     {
