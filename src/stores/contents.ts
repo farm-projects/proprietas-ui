@@ -66,8 +66,95 @@ export const useContentStore = defineStore("contents", () => {
       en: "Close",
       fr: "Fermer",
     },
+    estudante_pos_graduacao: {
+      pt: "Estudantes de Pós-Graduação",
+      es: "Estudiantes Postgraduados",
+      en: "Postgraduate Students",
+      fr: "Étudiants de Troisième Cycle",
+    },
   } as any);
   const tipoPesquisador = ref([
+    {
+      code: "Mestrando",
+      sigle: {
+        pt: "Mestrando",
+        es: "Mestrando",
+        en: "Mestrando",
+        fr: "Mestrando",
+      },
+    },
+    {
+      code: "Mestranda",
+      sigle: {
+        pt: "Mestranda",
+        es: "Mestranda",
+        en: "Mestranda",
+        fr: "Mestranda",
+      },
+    },
+    {
+      code: "Doutorando",
+      sigle: {
+        pt: "Doutorando",
+        es: "Doutorando",
+        en: "Doutorando",
+        fr: "Doutorando",
+      },
+    },
+    {
+      code: "Doutoranda",
+      sigle: {
+        pt: "Doutoranda",
+        es: "Doutoranda",
+        en: "Doutoranda",
+        fr: "Doutoranda",
+      },
+    },
+    {
+      code: "Bolsistas",
+      sigle: {
+        pt: "Bolsistas",
+        es: "Bolsistas",
+        en: "Bolsistas",
+        fr: "Bolsistas",
+      },
+    },
+    {
+      code: "Iniciação Científica",
+      sigle: {
+        pt: "Iniciação Científica",
+        es: "Iniciação Científica",
+        en: "Iniciação Científica",
+        fr: "Iniciação Científica",
+      },
+    },
+    {
+      code: "Extensão",
+      sigle: {
+        pt: "Extensão",
+        es: "Extensão",
+        en: "Extensão",
+        fr: "Extensão",
+      },
+    },
+    {
+      code: "Pós-Doutorado no Brasil",
+      sigle: {
+        pt: "Pós-Doutorado no Brasil",
+        es: "Pós-Doutorado no Brasil",
+        en: "Pós-Doutorado no Brasil",
+        fr: "Pós-Doutorado no Brasil",
+      },
+    },
+    {
+      code: "Pós-Doutorado no Exterior",
+      sigle: {
+        pt: "Pós-Doutorado no Exterior",
+        es: "Pós-Doutorado no Exterior",
+        en: "Pós-Doutorado no Exterior",
+        fr: "Pós-Doutorado no Exterior",
+      },
+    },
     {
       code: "Pesquisador Fundador",
       plural: {
@@ -230,6 +317,7 @@ export const useContentStore = defineStore("contents", () => {
         card.tema = card.tema?.iv;
         card.order = card.order?.iv;
         card.image = card.image?.iv;
+        card.localidade = card.localidade?.iv;
         cardsPesquisadores.value.push(card);
       }
       // load cardsLaboratorios

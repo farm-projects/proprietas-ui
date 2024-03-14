@@ -83,6 +83,38 @@
       ></pesquisador>
     </div>
   </div>
+  <div class="pesquisadores">
+    <div class="title text-primary" style="line-height: 30px">
+      {{ translations.estudante_pos_graduacao[language] }}
+    </div>
+    <div
+      :style="`display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, ${cardWidth});`"
+    >
+      <pesquisador
+        v-for="card in cardsPesquisadores
+          .filter(
+            (c: any) =>
+              c.tipo === 'Mestrando' ||
+              c.tipo === 'Mestranda' ||
+              c.tipo === 'Doutorando' ||
+              c.tipo === 'Doutoranda' ||
+              c.tipo === 'Bolsistas' ||
+              c.tipo === 'Iniciação Científica' ||
+              c.tipo === 'Extensão' ||
+              c.tipo === 'Pós-Doutorado no Brasil' ||
+              c.tipo === 'Pós-Doutorado no Exterior'
+          )
+          .sort((a: any, b: any) => a.order - b.order)"
+        :data="card"
+        :tipo="card.tipo"
+        :width="cardWidth"
+        :mobile="mobile"
+        :tag-size="cardTagSize"
+      ></pesquisador>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -95,12 +127,13 @@ import { computed } from "vue";
 
 const { mobile } = useDisplay();
 
-const cardWidth = computed(() => (mobile.value ? "100%" : "415px"));
+const cardWidth = computed(() => (mobile.value ? "100%" : "425px"));
 
 const cardTagSize = computed(() => (mobile.value ? "small" : "default"));
 
 const store = useContentStore();
-const { language, cardsPesquisadores, tipoPesquisador } = storeToRefs(store);
+const { language, cardsPesquisadores, tipoPesquisador, translations } =
+  storeToRefs(store);
 </script>
 
 <style lang="scss">
