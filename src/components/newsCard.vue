@@ -92,6 +92,9 @@ const refDate = computed(() => {
     p {
       margin: 10px 0;
     }
+    img {
+      max-width: 800px;
+    }
   }
   .v-card-title {
     font-size: 20px !important;
