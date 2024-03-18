@@ -93,7 +93,7 @@ const refDate = computed(() => {
       margin: 10px 0;
     }
     img {
-      max-width: 800px;
+      max-width: 100%;
     }
   }
   .v-card-title {
