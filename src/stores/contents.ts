@@ -338,6 +338,7 @@ export const useContentStore = defineStore("contents", () => {
         card.email = card.email?.iv;
         card.phone = card.phone?.iv;
         card.site = card.site?.iv;
+        card.image = card.image?.iv;
         cardsLaboratorios.value.push(card);
       }
       // load cardsNoticias

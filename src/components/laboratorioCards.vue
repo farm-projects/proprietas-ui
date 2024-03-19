@@ -5,10 +5,24 @@
         (a: any, b: any) => a.order - b.order
       )"
       class="card-laboratorio"
-      :title="card.title"
-      :subtitle="`${translations.coordination[language]}: ${card.responsible}`"
       :style="`border-left: 6px solid #006eb7; width: ${cardWidth};`"
     >
+      <div
+        v-if="card.image && card.image.length > 0"
+        class="card-laboratorio-image"
+      >
+        <img
+          :src="`https://cloud.squidex.io/api/assets/proprietas/${card.image[0]}`"
+        />
+      </div>
+      <v-card-title style="white-space: unset; line-height: 26px">
+        <div v-html="card.title"></div>
+      </v-card-title>
+      <v-card-subtitle
+        style="white-space: unset; line-height: 22px"
+        v-html="`${translations.coordination[language]}: ${card.responsible}`"
+      >
+      </v-card-subtitle>
       <v-card-text v-if="card.address || card.description[language]">
         <div
           class="card-laboratorio-description"
@@ -75,6 +89,14 @@ const cardWidth = computed(() => (mobile.value ? "100%" : "800px"));
   flex-direction: column;
   gap: 40px;
   .card-laboratorio {
+    .card-laboratorio-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        max-height: 300px;
+      }
+    }
     .card-laboratorio-description {
       p {
         margin: 10px 0;
