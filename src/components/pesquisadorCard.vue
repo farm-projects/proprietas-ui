@@ -73,7 +73,7 @@
             size="small"
             target="_blank"
           >
-            Fabebook
+            Facebook
           </v-btn>
         </v-slide-group-item>
         <v-slide-group-item>
