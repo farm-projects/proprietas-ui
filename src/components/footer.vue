@@ -39,11 +39,15 @@
         <img src="../assets/img/footer-inct.png" style="height: 55px" />
       </div>
     </div>
-    <div class="footer-flex" style="gap: 50px; margin-top: 50px">
+    <div class="footer-flex" style="gap: 100px; margin-top: 50px">
       <div>
-        <div class="footer-logo-title text-primary">SEDE INCT:</div>
-        <div style="display: flex; gap: 100px">
-          <img src="../assets/img/footer-uff-logo.png" style="height: 55px" />
+        <div class="footer-logo-title text-primary">SEDES CONFEDERADAS:</div>
+        <div style="display: flex; gap: 50px">
+          <img src="../assets/img/uerj.jpeg" style="height: 55px" />
+          <img src="../assets/img/uem.jpeg" style="height: 55px" />
+          <img src="../assets/img/ufc.jpeg" style="height: 55px" />
+          <img src="../assets/img/ufms.jpeg" style="height: 55px" />
+          <img src="../assets/img/ufp.jpeg" style="height: 55px" />
         </div>
       </div>
       <div>
